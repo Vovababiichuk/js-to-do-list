@@ -1,7 +1,161 @@
-@use '../../style' as s;
+body {
+  background-color: #17181f;
+  color: #ddd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  text-align: center;
+  padding-top: 100px;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.form {
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.form input[type='text'] {
+  background: none;
+  color: #fff;
+  border: 0;
+  padding: 8px 8px;
+  width: 500px;
+  border: 3px solid #30313d;
+  border-radius: 10px;
+  font-size: 20px;
+
+  &:focus {
+    box-shadow: 0 0 8px #55daff, 0 0 8px #55daff;
+  }
+
+  &::placeholder {
+    font-size: 16px;
+  }
+}
+
+.form button {
+  background-color: #30313d;
+  color: #61dafb;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 18px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #31d2ff;
+    color: #000000;
+  }
+}
 
 main {
-	background: s.color(dark);
-	color: s.color(light);
-	padding: s.space(4);
-} 
+  max-width: 556px;
+  margin: 0 auto;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 18px;
+  padding: 24px 0;
+
+  &__number {
+    font-size: 17px;
+    color: #31d2ff;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    background-color: #30313d;
+    color: #61dafb;
+    border: 0;
+    border-radius: 12px;
+    padding: 10px;
+
+    list-style-type: none;
+  }
+}
+
+.list__item-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.list__text {
+  max-width: 442px;
+  word-wrap: break-word;
+  display: block;
+}
+
+.list__item--done {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.color-green {
+  color: rgb(0, 196, 0);
+}
+
+.color-red {
+  color: rgb(255, 44, 44);
+}
+
+.color-grey {
+  color: grey;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.do {
+  background-image: url('/svg/icon1.svg');
+  @extend .icon;
+}
+
+.done {
+  background-image: url('/svg/icon3.svg');
+  @extend .icon;
+}
+
+.del {
+  background-image: url('/svg/icon2.svg');
+  @extend .icon;
+}
+
+.list__item-inner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
